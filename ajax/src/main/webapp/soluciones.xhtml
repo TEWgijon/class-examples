@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>JSF 2: Ajax Support</title>
+</h:head>
+<h:body>
+	<div align="center">
+		<h1 class="title">Ejemplos de Ajax</h1>
+		<br />
+
+		<h:form>
+			<fieldset>
+				<legend>Aleatorio</legend>
+				<h:commandButton value="Generar"
+					action="#{generadorNumeros.generar}">
+					<f:ajax render="campoNumero" />
+				</h:commandButton>
+				<h2>
+					<h:outputText value="#{generadorNumeros.numero}" id="campoNumero" />
+				</h2>
+			</fieldset>
+		</h:form>
+		<br />
+		<h:form>
+			<fieldset>
+				<legend>Buscador de usuarios</legend>
+				Sólo existen los UOs UO123456, UO654321, UO135246<br />
+				<br /> UO:
+				<h:inputText value="#{buscadorUO.uo}" />
+				<br />
+				<h:commandButton value="BuscarUO" action="#{buscadorUO.buscar}">
+					<f:ajax execute="@form" render="nombreUO" />
+				</h:commandButton>
+				<br />
+				<h2>
+					<h:outputText value="#{buscadorUO.nombre}" id="nombreUO" />
+				</h2>
+			</fieldset>
+		</h:form>
+		<br />
+		<h:form>
+			<fieldset>
+				<legend>Selectores anidados</legend>
+				Provincia:
+				<h:selectOneMenu value="#{selectorProvincia.provincia}">
+					<f:selectItems value="#{selectorProvincia.provincias}" />
+					<f:ajax render="listaCiudades" />
+				</h:selectOneMenu>
+				<br />Ciudad:
+				<h:selectOneMenu value="#{selectorProvincia.ciudad}"
+					disabled="#{selectorProvincia.ciudadesEnabled}" id="listaCiudades">
+					<f:selectItems value="#{selectorProvincia.ciudades}" />
+				</h:selectOneMenu>
+			</fieldset>
+		</h:form>
+		<br />
+		<h:form>
+			<fieldset>
+				<legend>Filtrador de usuarios</legend>
+				Usuario a buscar:
+				<h:inputText value="#{buscadorUsuarios.usuario}">
+					<f:ajax event="keyup" render="listaUsuarios" />
+				</h:inputText>
+				<br />
+				<h:outputText value="#{buscadorUsuarios.usuarios}"
+                    id="listaUsuarios"/>
+			</fieldset>
+		</h:form>
+	</div>
+</h:body>
+</html>
