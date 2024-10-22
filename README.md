@@ -7,6 +7,9 @@
 Welcome to the Theory class examples repository. Here, you will find valuable resources to assist with your 
 assignments.
 
+- [Ajax Examples](/ajax/)
+- [Gestioneitor with SpringBoot](/gestioneitor-springboot/)
+
 ---
 
 Feel free to explore the resources and contribute to improving the content!

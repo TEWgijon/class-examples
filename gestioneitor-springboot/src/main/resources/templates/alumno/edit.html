@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/head}" />
+<body>
+<nav th:replace="~{fragments/nav}" />
+
+<div class="container">
+<h2>Editar</h2>
+<form class="form-horizontal" method="post"
+      th:action="${'/alumno/edit/' + alumno.id}" th:object="${alumno}">
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="nombre">Nombre:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" th:value="${alumno.nombre}"
+                   id="nombre" name="nombre" placeholder="Juan" required/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="apellidos">Apellidos:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" th:value="${alumno.apellidos}"
+                   id="apellidos" name="apellidos" placeholder="Pérez" required/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="iduser">IdUser:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" th:value="${alumno.iduser}"
+                   id="iduser" name="iduser" placeholder="123456" required/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Correo:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" th:value="${alumno.email}"
+                   id="email" name="email" placeholder="juan@example.org" required/>
+        </div>
+    </div>
+
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+    </div>
+</form>
+</div>
+</body>
+</html>

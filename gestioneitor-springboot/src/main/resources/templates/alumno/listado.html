@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/head}" />
+<body>
+<nav th:replace="~{fragments/nav}" />
+
+<div class="container">
+    <h2>Alumnos</h2>
+
+    <p>Listado</p>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Id user</th>
+                <th>Email</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="alumno : ${alumnos}">
+                <td th:text="${alumno.nombre}"></td>
+                <td th:text="${alumno.apellidos}"></td>
+                <td th:text="${alumno.iduser}"></td>
+                <td th:text="${alumno.email}"></td>
+                <td><a th:href="${'/alumno/edit/' + alumno.id}">Editar</a></td>
+                <td><a th:href="${'/alumno/delete/' + alumno.id}">Eliminar</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
