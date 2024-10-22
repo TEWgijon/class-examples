@@ -9,7 +9,9 @@ assignments.
 
 - [Ajax Examples](/ajax/)
 - [Gestioneitor with SpringBoot](/gestioneitor-springboot/)
-
+- [SOAP Service Example](/soapexample/)
+- [REST Service Example](/restexample/)
+- [GraphQL Service Example](/graphqlexample/)
 ---
 
 Feel free to explore the resources and contribute to improving the content!
