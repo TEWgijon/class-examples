@@ -12,7 +12,7 @@ assignments.
 - [SOAP Service Example](/soapexample/)
 - [REST Service Example](/restexample/)
 - [GraphQL Service Example](/graphqlexample/)
-- [gRPC Service Example](/graphqlexample/)
+- [gRPC Service Example](/grpcexample/)
 ---
 
 Feel free to explore the resources and contribute to improving the content!

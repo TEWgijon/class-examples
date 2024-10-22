@@ -1,6 +1,5 @@
 package es.tew.soapexample;
 
-import jakarta.jws.WebParam;
 import jakarta.jws.WebService;
 import jakarta.jws.soap.SOAPBinding;
 

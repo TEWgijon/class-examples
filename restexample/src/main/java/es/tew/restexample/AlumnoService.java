@@ -1,9 +1,8 @@
-package es.tew.restexample;
+package es.tew
+.restexample;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-
-import java.awt.*;
 
 @Path("/alumno")
 public interface AlumnoService {
