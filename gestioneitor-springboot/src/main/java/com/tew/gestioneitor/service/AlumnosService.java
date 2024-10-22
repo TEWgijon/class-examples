@@ -3,8 +3,6 @@ package com.tew.gestioneitor.service;
 import com.tew.gestioneitor.model.Alumno;
 import com.tew.gestioneitor.service.exceptions.EntityAlreadyExistsException;
 import com.tew.gestioneitor.service.exceptions.EntityNotFoundException;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 
