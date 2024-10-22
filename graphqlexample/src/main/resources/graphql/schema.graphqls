@@ -1,0 +1,8 @@
+type Query {
+    alumnoByUo(uo: ID): Alumno
+}
+
+type Alumno {
+    uo: ID
+    name: String
+}
