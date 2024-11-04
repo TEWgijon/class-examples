@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Ejercicio 01. Validación de DNI" />
+        <meta name="author" content="Enol García González" />
+        <title>Validación de DNI</title>
+
+        <style>
+            #letras {
+                font-family: monospace;
+                background-color: lightgrey;
+                border: 1px solid black;
+                width: fit-content;
+            }
+
+            #letras p {
+                margin-inline: 1em;
+            }
+
+            form {
+                margin: 3em;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Ejercicio 01. Validación de DNI</h1>
+            <p>Implementar un programa en JavaScript que verifique que un DNI introducido en un campo de texto es correcto.</p>
+            <p> Para validar la letra de un DNI se hace la división entera entre 23 y al número de resto se le asigna una letra según la siguiente lista: </p>
+            
+            <div id="letras">
+                <p> Letra: T  R  W  A  G  M  Y  F  P  D &nbsp;X &nbsp;B &nbsp;N &nbsp;J &nbsp;Z &nbsp;S &nbsp;Q &nbsp;V &nbsp;H &nbsp;L &nbsp;C &nbsp;K &nbsp;E </p>
+                <p> Resto: 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 </p>
+            </div>
+            
+            <form>
+                <label for="dni">Dni:</label>
+                <input id="dni" type="text" />
+                <input type="submit" value="Comprobar">
+            </form>
+            
+            <span id="msgs"></span>
+        </main>
+        <script src="01_validacionDni.js"></script>
+    </body>
+</html>

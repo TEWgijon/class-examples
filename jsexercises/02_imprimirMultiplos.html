@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Ejercicio 02. Imprimir Múltiplos" />
+        <meta name="author" content="Enol García González" />
+
+        <title>Imprimir Múltiplos</title>
+
+        <style>
+            div {
+                margin: 1em;
+            }
+            form {
+                margin: 3em;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Ejercicio 02. Imprimir Múltiplos</h1>
+            <p>Implementar un programa en JavaScript que imprima los primeros n multiplos de un número introducido.</p>
+            
+            <form>
+                <div>
+                    <label for="nmut">Número de múltiplos:</label>
+                    <input type="range" id="nmut" min="1" max="100" value="20" step="1" oninput="document.getElementById('nmutValue').innerText = this.value;"/>
+                    <output id="nmutValue" for="nmut">20</output>
+                </div>
+                <div>
+                    <label for="inicial">Inicial:</label>
+                    <input type="number" id="inicial" step="1"/>
+                </div>
+                <input type="submit" value="Generar">
+            </form>
+            <span id="msgs"></span>
+        </main>
+        <script src="02_imprimirMultiplos.js"></script>
+    </body>
+</html>

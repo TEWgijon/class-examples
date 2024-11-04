@@ -1,0 +1,48 @@
+.calculadora {
+    color: black;
+    font-family: 'Cutive Mono', monospace;
+}
+
+
+.calculadora {
+    background-color: darkslategrey;
+    border-radius: 2em;
+    font-variant: small-caps;
+    padding: 0.5em;
+    width: 30vw;
+    font-size: 1.25;
+}
+
+.calculadora p {
+    background-color: darkolivegreen;
+    margin: 1em;
+    padding: 0.5em;
+    text-align: right;
+    font-size: 1.5em;
+}
+
+.calculadora ul {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.calculadora li {
+    border-radius: 1em;
+    text-align: center;
+    margin: 5%;
+    padding: 10% 0;
+}
+
+.memoria {
+    background-color: grey;
+}
+
+.entrada {
+    background-color: lightslategrey;
+}
+.operacion {
+    background-color: lightcoral;
+}

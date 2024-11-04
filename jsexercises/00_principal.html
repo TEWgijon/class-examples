@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Primer ejercicio en el que se verá lo principal de HTML. Incluyendo interacción con el usuario, personalización, eventos, modificación del árbol DOM y acceso a propiedades del navegador" />
+        <meta name="author" content="Enol García González" />
+    </head>
+    <body>
+        <main>
+            <h1>Ejemplo básico de JavaScript</h1>
+
+            <script>
+                var nombre = prompt("Dime tu nombre")
+                document.write(`<p>Hola, ${nombre}</p>`)
+
+                let mostrarDatos = function() {
+                    var main = document.getElementsByTagName("main")[0]
+
+                    main.removeChild(main.getElementsByTagName("input")[0])
+
+                    var contenedor = document.createElement("section")
+                    main.appendChild(contenedor)
+                    contenedor.innerHTML = "<h2>Datos del navegador</h2>"
+                    contenedor.innerHTML += `<p>Plataforma=${navigator.platform}</p>`
+                    contenedor.innerHTML += `<p>User Agent=${navigator.userAgent}</p>`
+                    contenedor.innerHTML += `<p>Idioma=${navigator.language}</p>`
+                    contenedor.innerHTML += `<p>Fabricante=${navigator.vendor}</p>`
+                    contenedor.innerHTML += `<p>Driver=${navigator.product}</p>`
+                }
+            </script>
+
+            <p>Cuando estés listo para ver la información de tu navegador pulsa el botón</p>
+            <input type="button" value="Mostrar" onclick="mostrarDatos();"/>
+        </main>
+    </body>
+</html>

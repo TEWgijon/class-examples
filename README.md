@@ -13,6 +13,7 @@ assignments.
 - [REST Service Example](/restexample/)
 - [GraphQL Service Example](/graphqlexample/)
 - [gRPC Service Example](/grpcexample/)
+- [Exercises JS](/jsexercises/)
 ---
 
 Feel free to explore the resources and contribute to improving the content!
