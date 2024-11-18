@@ -14,6 +14,7 @@ assignments.
 - [GraphQL Service Example](/graphqlexample/)
 - [gRPC Service Example](/grpcexample/)
 - [Exercises JS](/jsexercises/)
+- [NodeJS Example](/nodejsexample/)
 ---
 
 Feel free to explore the resources and contribute to improving the content!
