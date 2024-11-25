@@ -1,0 +1,80 @@
+/*C3*/SET SCHEMA PUBLIC
+\u000d\u000a    create sequence Alumno_SEQ start with 1 increment by 50
+\u000d\u000a    create sequence Asignatura_SEQ start with 1 increment by 50
+\u000d\u000a    create sequence Convocatoria_SEQ start with 1 increment by 50
+\u000d\u000a    create sequence Matricula_SEQ start with 1 increment by 50
+\u000d\u000a    create table Alumno (\u000d\u000a        id bigint not null,\u000d\u000a        apellido varchar(255),\u000d\u000a        dni varchar(255) unique,\u000d\u000a        nombre varchar(255),\u000d\u000a        primary key (id)\u000d\u000a    )
+\u000d\u000a    create table Asignatura (\u000d\u000a        id bigint not null,\u000d\u000a        nombre varchar(255) unique,\u000d\u000a        primary key (id)\u000d\u000a    )
+\u000d\u000a    create table Convocatoria (\u000d\u000a        nota float(24) not null,\u000d\u000a        id bigint not null,\u000d\u000a        matricula_id bigint,\u000d\u000a        periodo_evaluacion varchar(255) check (periodo_evaluacion in ('NOVIEMBRE','ENERO','MAYO','JUNIO')),\u000d\u000a        primary key (id),\u000d\u000a        unique (periodo_evaluacion, matricula_id)\u000d\u000a    )
+\u000d\u000a    create table Matricula (\u000d\u000a        alumno_id bigint,\u000d\u000a        asignatura_id bigint,\u000d\u000a        id bigint not null,\u000d\u000a        curso varchar(255),\u000d\u000a        primary key (id),\u000d\u000a        unique (curso, alumno_id, asignatura_id)\u000d\u000a    )
+\u000d\u000a    alter table Convocatoria \u000d\u000a       add constraint FKek1jl8tuywe0jqsiffm64gomk \u000d\u000a       foreign key (matricula_id) \u000d\u000a       references Matricula
+\u000d\u000a    alter table Matricula \u000d\u000a       add constraint FK241g7buvl7b4ef5ns306vyfao \u000d\u000a       foreign key (alumno_id) \u000d\u000a       references Alumno
+\u000d\u000a    alter table Matricula \u000d\u000a       add constraint FKg3ty7jwhwbdh0lmy2hp1q2jvl \u000d\u000a       foreign key (asignatura_id) \u000d\u000a       references Asignatura
+DISCONNECT
+/*C4*/SET SCHEMA PUBLIC
+INSERT INTO ALUMNO VALUES(1,'Garcia','12345678Z','Enol')
+INSERT INTO ASIGNATURA VALUES(1,'TEW')
+INSERT INTO MATRICULA VALUES(1,1,1,'2022-2023')
+INSERT INTO CONVOCATORIA VALUES(3.0E0,1,1,'ENERO')
+INSERT INTO MATRICULA VALUES(1,1,2,'2023-2024')
+INSERT INTO CONVOCATORIA VALUES(4.0E0,2,2,'ENERO')
+INSERT INTO CONVOCATORIA VALUES(5.0E0,3,2,'MAYO')
+COMMIT
+ALTER SEQUENCE PUBLIC.ALUMNO_SEQ RESTART WITH 51
+ALTER SEQUENCE PUBLIC.ASIGNATURA_SEQ RESTART WITH 51
+ALTER SEQUENCE PUBLIC.MATRICULA_SEQ RESTART WITH 101
+ALTER SEQUENCE PUBLIC.CONVOCATORIA_SEQ RESTART WITH 101
+DISCONNECT
+/*C5*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C6*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C7*/SET SCHEMA PUBLIC
+ALTER SEQUENCE PUBLIC.ALUMNO_SEQ RESTART WITH 101
+ALTER SEQUENCE PUBLIC.ASIGNATURA_SEQ RESTART WITH 101
+ALTER SEQUENCE PUBLIC.MATRICULA_SEQ RESTART WITH 151
+ALTER SEQUENCE PUBLIC.CONVOCATORIA_SEQ RESTART WITH 151
+DISCONNECT
+/*C8*/SET SCHEMA PUBLIC
+\u000d\u000a    drop table if exists Alumno cascade 
+\u000d\u000a    drop table if exists Asignatura cascade 
+\u000d\u000a    drop table if exists Convocatoria cascade 
+\u000d\u000a    drop table if exists Matricula cascade 
+\u000d\u000a    drop sequence Alumno_SEQ if exists
+\u000d\u000a    drop sequence Asignatura_SEQ if exists
+\u000d\u000a    drop sequence Convocatoria_SEQ if exists
+\u000d\u000a    drop sequence Matricula_SEQ if exists
+\u000d\u000a    create sequence Alumno_SEQ start with 1 increment by 50
+\u000d\u000a    create sequence Asignatura_SEQ start with 1 increment by 50
+\u000d\u000a    create sequence Convocatoria_SEQ start with 1 increment by 50
+\u000d\u000a    create sequence Matricula_SEQ start with 1 increment by 50
+\u000d\u000a    create table Alumno (\u000d\u000a        id bigint not null,\u000d\u000a        apellido varchar(255),\u000d\u000a        dni varchar(255) unique,\u000d\u000a        nombre varchar(255),\u000d\u000a        primary key (id)\u000d\u000a    )
+\u000d\u000a    create table Asignatura (\u000d\u000a        id bigint not null,\u000d\u000a        nombre varchar(255) unique,\u000d\u000a        primary key (id)\u000d\u000a    )
+\u000d\u000a    create table Convocatoria (\u000d\u000a        nota float(24) not null,\u000d\u000a        id bigint not null,\u000d\u000a        matricula_id bigint,\u000d\u000a        periodo_evaluacion varchar(255) check (periodo_evaluacion in ('NOVIEMBRE','ENERO','MAYO','JUNIO')),\u000d\u000a        primary key (id),\u000d\u000a        unique (periodo_evaluacion, matricula_id)\u000d\u000a    )
+\u000d\u000a    create table Matricula (\u000d\u000a        alumno_id bigint,\u000d\u000a        asignatura_id bigint,\u000d\u000a        id bigint not null,\u000d\u000a        curso varchar(255),\u000d\u000a        primary key (id),\u000d\u000a        unique (curso, alumno_id, asignatura_id)\u000d\u000a    )
+\u000d\u000a    alter table Convocatoria \u000d\u000a       add constraint FKek1jl8tuywe0jqsiffm64gomk \u000d\u000a       foreign key (matricula_id) \u000d\u000a       references Matricula
+\u000d\u000a    alter table Matricula \u000d\u000a       add constraint FK241g7buvl7b4ef5ns306vyfao \u000d\u000a       foreign key (alumno_id) \u000d\u000a       references Alumno
+\u000d\u000a    alter table Matricula \u000d\u000a       add constraint FKg3ty7jwhwbdh0lmy2hp1q2jvl \u000d\u000a       foreign key (asignatura_id) \u000d\u000a       references Asignatura
+INSERT INTO ALUMNO VALUES(1,'Garcia','12345678Z','Enol')
+INSERT INTO ASIGNATURA VALUES(1,'TEW')
+INSERT INTO MATRICULA VALUES(1,1,1,'2022-2023')
+INSERT INTO CONVOCATORIA VALUES(3.0E0,1,1,'ENERO')
+INSERT INTO MATRICULA VALUES(1,1,2,'2023-2024')
+INSERT INTO CONVOCATORIA VALUES(4.0E0,2,2,'ENERO')
+INSERT INTO CONVOCATORIA VALUES(5.0E0,3,2,'MAYO')
+COMMIT
+ALTER SEQUENCE PUBLIC.ALUMNO_SEQ RESTART WITH 51
+ALTER SEQUENCE PUBLIC.ASIGNATURA_SEQ RESTART WITH 51
+ALTER SEQUENCE PUBLIC.MATRICULA_SEQ RESTART WITH 101
+ALTER SEQUENCE PUBLIC.CONVOCATORIA_SEQ RESTART WITH 101
+DISCONNECT
+/*C9*/SET SCHEMA PUBLIC
+ALTER SEQUENCE PUBLIC.ALUMNO_SEQ RESTART WITH 101
+ALTER SEQUENCE PUBLIC.ASIGNATURA_SEQ RESTART WITH 101
+ALTER SEQUENCE PUBLIC.MATRICULA_SEQ RESTART WITH 151
+ALTER SEQUENCE PUBLIC.CONVOCATORIA_SEQ RESTART WITH 151
+DISCONNECT
+/*C10*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C2*/SET SCHEMA PUBLIC
+DISCONNECT

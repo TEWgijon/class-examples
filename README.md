@@ -15,6 +15,8 @@ assignments.
 - [gRPC Service Example](/grpcexample/)
 - [Exercises JS](/jsexercises/)
 - [NodeJS Example](/nodejsexample/)
+- [React Example](/reactexample/)
+- [JPA Example](/jpaexample/)
 ---
 
 Feel free to explore the resources and contribute to improving the content!
