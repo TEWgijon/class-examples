@@ -17,6 +17,7 @@ assignments.
 - [NodeJS Example](/nodejsexample/)
 - [React Example](/reactexample/)
 - [JPA Example](/jpaexample/)
+- [Frameworks Examples](/frameworksexamples//)
 ---
 
 Feel free to explore the resources and contribute to improving the content!
