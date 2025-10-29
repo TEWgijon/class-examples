@@ -5,7 +5,9 @@
 # Deploying the Application
 
 The application is deployed on a Wildfly server, in the same way that the *gestioneitor* applications are deployed. 
-To verify how it works, you can test it using the following `curl` command:
+To verify how it works, you can get the WSDL file which describes all the operations available in the server. This WSDL file is available on: http://localhost:8080/soapexample/AlumnoServiceImpl?wsdl
+
+In order to invoke mehtods, you can use the following `curl` command:
 
 ```bash
 curl --location 'http://localhost:8080/soapexample/AlumnoServiceImpl' \
